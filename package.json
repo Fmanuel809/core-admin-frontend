@@ -26,7 +26,7 @@
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
     "chart.js": "2.7.3",
-    "core-js": "2.5.7",
+    "core-js": "3.0.0",
     "font-awesome": "4.7.0",
     "ng2-charts": "2.3.0",
     "rxjs": "6.5.2",
