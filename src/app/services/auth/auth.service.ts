@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 export class AuthService {
 
     api = `${environment.apiUrl}/auth/login`;
-    token;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -22,7 +21,7 @@ export class AuthService {
     });
   }
 
-  logout (){
+  logout () {
     localStorage.removeItem('auth_token');
   }
 
