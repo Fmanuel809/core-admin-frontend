@@ -18,7 +18,6 @@ export class UserInfoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-      this.userInfo.getCurrentUser();
       const currentUser = JSON.parse(sessionStorage.getItem('current_user'));
       this.name = currentUser.name;
       this.username = currentUser.username;

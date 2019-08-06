@@ -1,5 +1,11 @@
 {
     "Dashboard": "Dashboard",
+    "Products": "Products",
+    "Users": "Users",
+    "Add": "Add",
+    "View": "View",
+    "Edit": "Edit",
+    "Delete": "Delete",
     "Charts": "Charts",
     "Tables": "Tables",
     "Forms": "Forms",

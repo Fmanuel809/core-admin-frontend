@@ -1,5 +1,11 @@
 {
     "Dashboard": "Principal",
+    "Products": "Productos",
+    "Users": "Usuarios",
+    "Add": "Agregar",
+    "View": "Ver",
+    "Edit": "Editar",
+    "Delete": "Borrar",
     "Charts": "Caracteres",
     "Tables": "Tablas",
     "Forms": "Formularios",
