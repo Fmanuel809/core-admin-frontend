@@ -13,7 +13,22 @@ export class SidebarComponent implements OnInit {
     showMenu: string;
     pushRightClass: string;
 
+    public username: string;
+    public userId: number;
+
     @Output() collapsedEvent = new EventEmitter<boolean>();
+
+    public menuItems = [
+        { name: 'Dashboard', link: '/dashboard', icon: 'fa fa-fw fa-dashboard'},
+        { name: 'Users', link: '/users', icon: 'fa fa-users', childrens: [
+            {name: 'View',   link: '/users', icon: 'fa fa-eye'},
+            {name: 'Add',    link: '/users/add',  icon: 'fa fa-plus'}
+        ] },
+        { name: 'Products', link: '/products', icon: 'fa fa-archive', childrens: [
+            {name: 'View',   link: '/products',   icon: 'fa fa-eye'},
+            {name: 'Add',    link: '/products/add',    icon: 'fa fa-plus'}
+        ] }
+    ];
 
     constructor(private translate: TranslateService, public router: Router) {
         this.router.events.subscribe(val => {
@@ -28,10 +43,16 @@ export class SidebarComponent implements OnInit {
     }
 
     ngOnInit() {
+        (this.menuItems).forEach(e => {
+            console.log(e.childrens);
+        });
         this.isActive = false;
         this.collapsed = false;
         this.showMenu = '';
         this.pushRightClass = 'push-right';
+        const currentUser = JSON.parse(sessionStorage.getItem('current_user'));
+        this.userId = currentUser.id;
+        this.username = currentUser.username;
     }
 
 
@@ -40,6 +61,7 @@ export class SidebarComponent implements OnInit {
     }
 
     addExpandClass(element: any) {
+        console.log(element);
         if (element === this.showMenu) {
             this.showMenu = '0';
         } else {

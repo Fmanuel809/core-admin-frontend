@@ -32,8 +32,6 @@ export class HeaderComponent implements OnInit {
 
     ngOnInit() {
         this.pushRightClass = 'push-right';
-
-        this.UserService.getCurrentUser();
         const currentUser = JSON.parse(sessionStorage.getItem('current_user'));
         this.userId = currentUser.id;
         this.username = currentUser.username;
@@ -56,6 +54,7 @@ export class HeaderComponent implements OnInit {
 
     onLoggedout() {
         localStorage.removeItem('auth_token');
+        sessionStorage.clear();
     }
 
     changeLang(language: string) {
