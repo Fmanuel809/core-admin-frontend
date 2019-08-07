@@ -13,10 +13,10 @@
                         <input type="password" [(ngModel)]="password" name="password" class="form-control input-underline input-lg" id="password" placeholder="{{ 'Password' | translate }}">
                     </div>
                 </div>
-                <a class="btn rounded-btn" (click)="Login()">{{ 'Log in' | translate }}</a>
-                &nbsp;
+                <a class="btn rounded-btn" (click)="Login()">{{ 'Log in' | translate }}</a> &nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' | translate }}</a>
             </form>
         </div>
     </div>
 </div>
+<ngx-spinner class="text-white font-weight-bold" style="font-size: 25px"> {{ 'Loading' | translate }}.... </ngx-spinner>
