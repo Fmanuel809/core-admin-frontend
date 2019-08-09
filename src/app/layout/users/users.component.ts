@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { first } from 'rxjs/operators';
+
+import { User } from '../../shared/models/users';
+import { UsersService } from '../services/users/users.service';
+
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-users',
@@ -7,14 +14,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-    collapedSideBar: boolean;
+    users: User[] = []
+    constructor(private userService: UsersService, private translate: TranslateService) {}
 
-    constructor() {}
+    ngOnInit() {
+        this.loadAllUsers();
+    }
 
-    ngOnInit() {}
+    private loadAllUsers () {
+        this.userService.getAllUsers().pipe(first()).subscribe((resp) => {
+            this.users = resp;
+        });
+    }
 
-    receiveCollapsed($event) {
-        this.collapedSideBar = $event;
+    changeLang(language: string) {
+        this.translate.use(language);
     }
 
 }
