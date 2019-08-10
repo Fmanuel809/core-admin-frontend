@@ -21,19 +21,31 @@ export class UsersService {
     }
 
     getUserById(id: number) {
-        //return this.http. ;
+        let headers = new HttpHeaders();
+        headers = headers.set('Content-Type', 'application/json');
+        headers = headers.set('Authorization', localStorage.getItem('auth_token'));
+        return this.http.get<User>(this.apiRoute + '/users/' + id, { headers: headers});
     }
 
     createUser (user: User) {
-        //return this.http. ;
+        let headers = new HttpHeaders();
+        headers = headers.set('Content-Type', 'application/json');
+        headers = headers.set('Authorization', localStorage.getItem('auth_token'));
+        return this.http.post(this.apiRoute + '/users', user, { headers: headers });
     }
 
-    updateUser (user: User) {
-        //return this.http. ;
+    updateUser (id: number, user: User) {
+        let headers = new HttpHeaders();
+        headers = headers.set('Content-Type', 'application/json');
+        headers = headers.set('Authorization', localStorage.getItem('auth_token'));
+        return this.http.put(this.apiRoute + '/users/' + id, user, { headers: headers });
     }
 
     deleteUser (id: number) {
-        //return this.http. ;
+        let headers = new HttpHeaders();
+        headers = headers.set('Content-Type', 'application/json');
+        headers = headers.set('Authorization', localStorage.getItem('auth_token'));
+        return this.http.delete(this.apiRoute + '/users/' + id, { headers: headers });
     }
 
 }

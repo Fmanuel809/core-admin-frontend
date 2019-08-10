@@ -7,6 +7,8 @@
     "View": "View",
     "Edit": "Edit",
     "Name": "Name",
+    "Role": "Role",
+    "Administrator": "Administrator",
     "Username": "Username",
     "Created At": "Created At",
     "Updated At": "Updated At",

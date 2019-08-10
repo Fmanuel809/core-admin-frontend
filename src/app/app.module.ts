@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageTranslationModule } from './shared/modules/language-translation/language-translation.module';
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +30,7 @@ import { LoaderComponent } from './loader/loader.component';
           })
     ],
     declarations: [AppComponent, LoaderComponent],
-    providers: [AuthGuard],
+    providers: [AuthGuard, NgxSpinnerService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

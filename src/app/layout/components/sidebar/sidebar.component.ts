@@ -43,9 +43,6 @@ export class SidebarComponent implements OnInit {
     }
 
     ngOnInit() {
-        (this.menuItems).forEach(e => {
-            console.log(e.childrens);
-        });
         this.isActive = false;
         this.collapsed = false;
         this.showMenu = '';
