@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
@@ -16,7 +18,10 @@ import { EditComponent } from './components/edit/edit.component';
     ],
     imports: [
         CommonModule,
-        UsersRoutingModule
+        UsersRoutingModule,
+        TranslateModule,
+        ReactiveFormsModule,
+        FormsModule
     ]
 })
 export class UsersModule { }

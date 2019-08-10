@@ -12,7 +12,7 @@ const routes: Routes = [
         component: UsersComponent
     },
     {
-        path: 'users/view/{id:}',
+        path: 'users/view/:id',
         component: ViewComponent
     },
     {
@@ -20,14 +20,16 @@ const routes: Routes = [
         component: AddComponent
     },
     {
-        path: 'users/edit/{id:}',
+        path: 'users/edit/:id',
         component: EditComponent
     },
     { path: '**', redirectTo: 'not-found' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+      RouterModule.forChild(routes)
+    ],
   exports: [RouterModule]
 })
 export class UsersRoutingModule { }
