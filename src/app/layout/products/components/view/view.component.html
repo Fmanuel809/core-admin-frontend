@@ -1,0 +1,25 @@
+<div class="container-fluid p-5 shadow">
+    <div class="row">
+        <div class="col-sm">
+            <h5 class="text-primary">{{ 'Products' | translate }} {{ 'Info' | translate }}</h5>
+        </div>
+        <div class="col-sm d-flex justify-content-end">
+            <a [routerLink]="['/products']" href="javascript:void(0)" class="btn btn-success btn-sm"><i class="fa fa-archive"></i> List {{ 'Products' | translate }}</a
+            >
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="card mb-3">
+            <div class="card-header">{{ product.name }}</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12"><b>Description: </b>{{ product.description }}</div>
+                    <div class="col-md-12"><b>Available: </b>{{ product.is_spent === 1 ? 'Not' : 'Yes' }}</div>
+                    <div class="col-md-12"><b>Image: </b>{{ product.url_image }}</div>
+                    <div class="col-md-12"><b>Creation Date: </b> {{ product.created_at }}</div>
+                    <div class="col-md-12"><b>Last Modification: </b> {{ product.updated_at }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
