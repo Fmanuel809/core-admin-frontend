@@ -30,7 +30,9 @@
                         <td>{{ product.name }}</td>
                         <td>{{ product.description }}</td>
                         <td>{{ (product.is_spent === 1) ? "Not" : "Yes" | translate }}</td>
-                        <td>{{ product.url_image }}</td>
+                        <td>
+                            <a href="{{ urlImage + product.id }}" target="_blank">Image Link</a>
+                        </td>
                         <td>{{ product.created_at }}</td>
                         <td>{{ product.updated_at }}</td>
                         <td>

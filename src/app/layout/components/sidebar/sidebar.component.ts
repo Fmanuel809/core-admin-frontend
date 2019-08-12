@@ -19,14 +19,14 @@ export class SidebarComponent implements OnInit {
     @Output() collapsedEvent = new EventEmitter<boolean>();
 
     public menuItems = [
-        { name: 'Dashboard', link: '/dashboard', icon: 'fa fa-fw fa-dashboard'},
+        { name: 'Dashboard', link: 'dashboard', icon: 'fa fa-fw fa-dashboard'},
         { name: 'Users', link: '/users', icon: 'fa fa-users', childrens: [
-            {name: 'View',   link: '/users', icon: 'fa fa-eye'},
-            {name: 'Add',    link: '/users/add',  icon: 'fa fa-plus'}
+            {name: 'View',   link: 'users', icon: 'fa fa-eye'},
+            {name: 'Add',    link: 'users/add',  icon: 'fa fa-plus'}
         ] },
         { name: 'Products', link: '/products', icon: 'fa fa-archive', childrens: [
-            {name: 'View',   link: '/products',   icon: 'fa fa-eye'},
-            {name: 'Add',    link: '/products/add',    icon: 'fa fa-plus'}
+            {name: 'View',   link: 'products',   icon: 'fa fa-eye'},
+            {name: 'Add',    link: 'products/add',    icon: 'fa fa-plus'}
         ] }
     ];
 

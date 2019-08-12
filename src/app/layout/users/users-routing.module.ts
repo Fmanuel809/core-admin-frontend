@@ -8,19 +8,19 @@ import { EditComponent } from './components/edit/edit.component';
 
 const routes: Routes = [
     {
-        path: 'users',
+        path: '',
         component: UsersComponent
     },
     {
-        path: 'users/view/:id',
+        path: 'view/:id',
         component: ViewComponent
     },
     {
-        path: 'users/add',
+        path: 'add',
         component: AddComponent
     },
     {
-        path: 'users/edit/:id',
+        path: 'edit/:id',
         component: EditComponent
     },
     { path: '**', redirectTo: 'not-found' }

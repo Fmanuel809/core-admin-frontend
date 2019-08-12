@@ -9,7 +9,7 @@ const routes: Routes = [
         component: WarehouseComponent,
         children: [
             {
-                path: 'warehouse',
+                path: '',
                 component: ListComponent
             }
         ]

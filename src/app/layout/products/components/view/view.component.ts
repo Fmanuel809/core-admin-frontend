@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../../../services/products/products.service';
 import { first } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
     selector: 'app-view',
@@ -15,13 +16,14 @@ export class ViewComponent implements OnInit {
 
     product: Product;
     id: number;
-
+    public urlImage: string;
     constructor(
         private translate: TranslateService,
         private route: ActivatedRoute,
         private productService: ProductsService,
         private toastr: ToastrService
     ) {
+        this.urlImage = `${environment.apiUrl}/product/image/`;
         this.route.queryParams.subscribe((p) => {
             this.id = this.route.snapshot.params.id;
         });

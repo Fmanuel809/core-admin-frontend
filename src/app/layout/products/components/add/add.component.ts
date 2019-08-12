@@ -12,7 +12,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddComponent implements OnInit {
     public product: Product;
-
     constructor(
         private translate: TranslateService,
         private productsService: ProductsService,
@@ -22,6 +21,10 @@ export class AddComponent implements OnInit {
     }
 
     ngOnInit() {}
+
+    handleFileInput(files: FileList) {
+        this.product.url_image = files.item(0);
+    }
 
     onSubmit() {
         this.productsService.createProduct(this.product).pipe(first()).subscribe((res) => {

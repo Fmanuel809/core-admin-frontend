@@ -4,7 +4,7 @@
             <h5 class="text-primary">{{ 'Add' | translate }} {{ 'Products' | translate }}</h5>
         </div>
         <div class="col-sm d-flex justify-content-end">
-            <a [routerLink]="['/products']" href="javascript:void(0)" class="btn btn-success btn-sm"><i class="fa fa-archive"></i> {{ 'Products' | translate }}</a
+            <a [routerLink]="['/backoffice/products']" href="javascript:void(0)" class="btn btn-success btn-sm"><i class="fa fa-archive"></i> {{ 'Products' | translate }}</a
             >
         </div>
     </div>
@@ -32,7 +32,7 @@
             </div>
             <div class="form-group">
                 <label>Image</label>
-                <input type="text" [(ngModel)] = "product.url_image" name="image" class="form-control" />
+                <input type="file" name="image" class="form-control" (change)="handleFileInput($event.target.files)" />
             </div>
             <div class="text-center">
                 <button class="btn btn-primary mr-1"><i class="fa fa-floppy-o"></i> Save</button>

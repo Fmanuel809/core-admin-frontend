@@ -1,4 +1,3 @@
-import { Products } from './../../../../.history/src/app/shared/models/products_20190810165332';
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products/products.service';
 import { first } from 'rxjs/operators';
@@ -7,6 +6,7 @@ import { Product } from '../../shared/models/products';
 
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'app-products',
@@ -15,7 +15,10 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ProductsComponent implements OnInit {
     products: Product[] = [];
-    constructor(private productsService: ProductsService, private translate: TranslateService, private toastr: ToastrService) {}
+    public urlImage: string;
+    constructor(private productsService: ProductsService, private translate: TranslateService, private toastr: ToastrService) {
+        this.urlImage = `${environment.apiUrl}/product/image/`;
+    }
 
     ngOnInit() {
         this.loadProducts();

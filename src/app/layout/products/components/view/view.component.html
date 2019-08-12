@@ -4,7 +4,7 @@
             <h5 class="text-primary">{{ 'Products' | translate }} {{ 'Info' | translate }}</h5>
         </div>
         <div class="col-sm d-flex justify-content-end">
-            <a [routerLink]="['/products']" href="javascript:void(0)" class="btn btn-success btn-sm"><i class="fa fa-archive"></i> List {{ 'Products' | translate }}</a
+            <a [routerLink]="['/backoffice/products']" href="javascript:void(0)" class="btn btn-success btn-sm"><i class="fa fa-archive"></i> List {{ 'Products' | translate }}</a
             >
         </div>
     </div>
@@ -15,11 +15,11 @@
                 <div class="row">
                     <div class="col-md-12"><b>Description: </b>{{ product.description }}</div>
                     <div class="col-md-12"><b>Available: </b>{{ product.is_spent === 1 ? 'Not' : 'Yes' }}</div>
-                    <div class="col-md-12"><b>Image: </b>{{ product.url_image }}</div>
-                    <div class="col-md-12"><b>Creation Date: </b> {{ product.created_at }}</div>
-                    <div class="col-md-12"><b>Last Modification: </b> {{ product.updated_at }}</div>
-                </div>
-            </div>
-        </div>
+                    <div class="col-md-12"><b>Image: </b><a href="{{ urlImage + product.id }}" target="_blank">Image Link</a></div>
+        <div class="col-md-12"><b>Creation Date: </b> {{ product.created_at }}</div>
+        <div class="col-md-12"><b>Last Modification: </b> {{ product.updated_at }}</div>
     </div>
+</div>
+</div>
+</div>
 </div>

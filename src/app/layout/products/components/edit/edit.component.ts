@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
+
 @Component({
     selector: 'app-edit',
     templateUrl: './edit.component.html',
@@ -14,7 +15,6 @@ import { ToastrService } from 'ngx-toastr';
 export class EditComponent implements OnInit {
     public product: Product;
     id: number;
-
     constructor(private route: ActivatedRoute, private productService: ProductsService,
          private translateService: TranslateService, private toastr: ToastrService) {
         this.product = new Product();
@@ -29,9 +29,13 @@ export class EditComponent implements OnInit {
         });
     }
 
+    handleFileInput(files: FileList) {
+        this.product.url_image = files.item(0);
+    }
+
+
     onSubmit() {
-        this.productService
-            .createProduct(this.product)
+        this.productService.editProduct(this.id, this.product)
             .pipe(first())
             .subscribe(
                 res => {

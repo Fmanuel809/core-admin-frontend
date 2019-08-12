@@ -25,7 +25,7 @@ export class AuthService {
                 localStorage.setItem('auth_token', resp.token);
                 this.getCurrentUser();
                 setTimeout(() => {
-                    this.router.navigate(['dashboard']);
+                    this.router.navigate(['backoffice']);
                 }, 1000);
             },
             (error: any) => {
