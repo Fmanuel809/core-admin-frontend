@@ -6,12 +6,15 @@ import { WarehouseComponent } from './warehouse.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListComponent } from './components/list/list.component';
+import { FormsModule } from '@angular/forms';
+import { SearchPipe } from '../shared/pipes/search.pipe';
 
 @NgModule({
-  declarations: [WarehouseComponent, HeaderComponent, FooterComponent, ListComponent],
+  declarations: [WarehouseComponent, HeaderComponent, FooterComponent, ListComponent, SearchPipe],
   imports: [
     CommonModule,
-    WarehouseRoutingModule
+    WarehouseRoutingModule,
+    FormsModule
   ]
 })
 export class WarehouseModule { }
