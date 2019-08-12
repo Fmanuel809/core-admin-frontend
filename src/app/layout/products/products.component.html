@@ -1,0 +1,48 @@
+<div class="container-fluid p-5 shadow">
+    <div class="row">
+        <div class="col-sm">
+            <h5 class="text-primary">
+                {{ "Products" | translate }}
+            </h5>
+        </div>
+        <div class="col-sm d-flex justify-content-end">
+            <a [routerLink]="['add']" href="javascript:void(0)" class="btn btn-success btn-sm"><i class="fa fa-archive"></i> {{ "Add" | translate }}</a>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">{{ "Name" | translate}}</th>
+                        <th scope="col">{{ "Description" | translate }}</th>
+                        <th scope="col">{{ "Available" | translate }}</th>
+                        <th scope="col">{{ "Image" | translate }}</th>
+                        <th scope="col">{{ "Created At" | translate }}</th>
+                        <th scope="col">{{ "Updated At" | translate }}</th>
+                        <th scope="col">{{ "Actions" | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ (product.is_spent === 1) ? "Not" : "Yes" | translate }}</td>
+                        <td>{{ product.url_image }}</td>
+                        <td>{{ product.created_at }}</td>
+                        <td>{{ product.updated_at }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a [routerLink]="['view/', product.id]" href="javascript:void(0)" class="btn btn-warning text-white"><i class="fa fa-eye"></i></a>
+                                <a [routerLink]="['edit/', product.id]" href="javascript:void(0)" class="btn btn-info text-white"><i class="fa fa-pencil-square-o"></i></a>
+                                <button (click)="deleteProduct (product.id)" class="btn btn-danger text-white"><i class="fa fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
